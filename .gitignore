@@ -259,3 +259,27 @@ tramp
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Monorepo specific
+# Workspace node_modules are handled by the main node_modules ignore above
+apps/*/node_modules/
+packages/*/node_modules/
+
+# Build outputs for all apps
+apps/*/.next/
+apps/*/out/
+apps/*/build/
+apps/*/dist/
+
+# Environment files for all apps
+apps/*/.env*.local
+apps/*/.env
+apps/*/.env.development
+apps/*/.env.production
+
+# TypeScript build info for all apps
+apps/*/*.tsbuildinfo
+apps/*/next-env.d.ts
+
+# Monorepo migration file
+MONOREPO_MIGRATION.md

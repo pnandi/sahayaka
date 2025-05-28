@@ -2,34 +2,31 @@
 
 ![Sahayaka Logo](https://img.shields.io/badge/Sahayaka-Healthcare%20AI-blue?style=for-the-badge)
 
-A modern, responsive website for Sahayaka, a healthcare startup focused on AI agentic workflow automation of administrative tasks. The platform creates comprehensive patient profiles, reduces clinician burden, and improves accuracy in healthcare operations.
+A comprehensive healthcare startup platform focused on AI agentic workflow automation of administrative tasks. The platform creates comprehensive patient profiles, reduces clinician burden, and improves accuracy in healthcare operations.
 
-## 🚀 Features
+## 🏗️ Monorepo Structure
 
-- **AI Agentic Workflow Automation** - Intelligent automation that learns and adapts
-- **Comprehensive Patient Profiles** - Longitudinal health data management
-- **Administrative Task Automation** - Streamlined scheduling, billing, and documentation
-- **Clinician Burden Reduction** - Free up healthcare professionals for patient care
-- **Improved Accuracy** - AI-powered validation and verification systems
-- **Responsive Design** - Works seamlessly across all devices
+This repository is organized as a monorepo containing multiple applications and packages:
 
-## 🛠️ Tech Stack
+```
+sahayaka/
+├── apps/
+│   └── websites/
+│       └── sahayaka.ai/          # Main marketing website
+├── packages/                     # Shared packages (future)
+├── docs/                        # Documentation (future)
+└── tools/                       # Build tools and utilities (future)
+```
 
-- **Framework**: Next.js 13 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Runtime**: Node.js 22+
-- **Package Manager**: npm
+## 🚀 Quick Start
 
-## 📋 Prerequisites
-
-Before running this project, make sure you have:
+### Prerequisites
 
 - Node.js 22.0.0 or higher
-- npm (comes with Node.js)
+- npm 10.0.0 or higher
 - Git
 
-## 🔧 Installation
+### Installation
 
 1. **Clone the repository**
    ```bash
@@ -37,121 +34,189 @@ Before running this project, make sure you have:
    cd sahayaka
    ```
 
-2. **Install dependencies**
+2. **Install all dependencies**
    ```bash
    npm install
    ```
 
-3. **Start the development server**
+3. **Start the website development server**
    ```bash
    npm run dev
+   # or specifically for the website
+   npm run dev:website
    ```
 
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📁 Project Structure
+## 📱 Applications
 
-```
-sahayaka/
-├── src/
-│   ├── app/
-│   │   ├── about/
-│   │   │   └── page.tsx
-│   │   ├── contact/
-│   │   │   └── page.tsx
-│   │   ├── features/
-│   │   │   └── page.tsx
-│   │   ├── solutions/
-│   │   │   └── page.tsx
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   └── components/
-│       ├── Header.tsx
-│       ├── Hero.tsx
-│       ├── Features.tsx
-│       ├── Stats.tsx
-│       ├── Solutions.tsx
-│       ├── CTA.tsx
-│       └── Footer.tsx
-├── public/
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── next.config.js
-```
+### 🌐 Marketing Website (`apps/websites/sahayaka.ai`)
 
-## 🎨 Design System
+The main marketing website showcasing Sahayaka's AI-powered healthcare automation platform.
 
-### Colors
-- **Primary**: Indigo (Healthcare blue)
-- **Secondary**: Purple gradients
-- **Accent**: Green (for success states)
-- **Text**: Gray scale
+**Features:**
+- Modern Next.js 13 with App Router
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Responsive design
+- SEO optimized
 
-### Typography
-- **Font Family**: Inter (Google Fonts)
-- **Headings**: Bold, large sizes for impact
-- **Body**: Clean, readable text
+**Tech Stack:**
+- Next.js 13+
+- TypeScript
+- Tailwind CSS
+- React 18
 
-## 📱 Pages
-
-1. **Home** (`/`) - Landing page with hero, features, stats, and solutions
-2. **About** (`/about`) - Company mission, vision, and values
-3. **Features** (`/features`) - Detailed platform capabilities
-4. **Solutions** (`/solutions`) - Industry-specific solutions
-5. **Contact** (`/contact`) - Contact form and company information
-
-## 🚀 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically
-
-### Other Platforms
-- **Netlify**: Connect GitHub repo and deploy
-- **AWS Amplify**: Use the Amplify console
-- **Docker**: Build and containerize the application
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env.local` file for environment-specific variables:
+**Commands:**
 ```bash
-# Add your environment variables here
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
+# Development
+npm run dev:website
+
+# Build
+npm run build:website
+
+# Production
+npm run start --workspace=apps/websites/sahayaka.ai
 ```
 
-### Tailwind Configuration
-Customize colors, fonts, and spacing in `tailwind.config.js`
+## 🛠️ Development
 
-## 📊 Performance
+### Workspace Commands
 
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
-- **Core Web Vitals**: Optimized for excellent user experience
-- **Image Optimization**: Next.js automatic image optimization
-- **Code Splitting**: Automatic route-based code splitting
+```bash
+# Install dependencies for all workspaces
+npm install
+
+# Run development server for website
+npm run dev
+
+# Build all applications
+npm run build
+
+# Lint all code
+npm run lint
+
+# Type check all TypeScript
+npm run type-check
+
+# Clean build artifacts
+npm run clean
+```
+
+### Working with Specific Apps
+
+```bash
+# Work on the website specifically
+cd apps/websites/sahayaka.ai
+npm run dev
+
+# Or from root using workspace commands
+npm run dev --workspace=apps/websites/sahayaka.ai
+```
+
+## 🎯 Platform Features
+
+- **AI Agentic Workflow Automation** - Intelligent automation that learns and adapts
+- **Comprehensive Patient Profiles** - Longitudinal health data management
+- **Administrative Task Automation** - Streamlined scheduling, billing, and documentation
+- **Clinician Burden Reduction** - Free up healthcare professionals for patient care
+- **Improved Accuracy** - AI-powered validation and verification systems
+- **Scalable Architecture** - Monorepo structure for future expansion
+
+## 📊 Performance Metrics
+
+- **75% Reduction** in administrative time
+- **95% Improvement** in data accuracy
+- **3x Faster** patient processing
+- **500+ Healthcare Providers** served
+
+## 🚀 Deployment
+
+### Website Deployment
+
+The marketing website can be deployed to various platforms:
+
+**Vercel (Recommended):**
+```bash
+cd apps/websites/sahayaka.ai
+vercel --prod
+```
+
+**Netlify:**
+```bash
+cd apps/websites/sahayaka.ai
+npm run build
+# Deploy the .next folder
+```
+
+**Docker:**
+```bash
+cd apps/websites/sahayaka.ai
+docker build -t sahayaka-website .
+docker run -p 3000:3000 sahayaka-website
+```
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Make your changes in the appropriate workspace
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
-## 📄 License
+### Development Guidelines
 
-This project is proprietary and confidential. All rights reserved by Sahayaka.
+- Follow the existing code style and conventions
+- Write TypeScript for all new code
+- Use conventional commit messages
+- Test your changes thoroughly
+- Update documentation as needed
+
+## 📁 Project Structure
+
+```
+sahayaka/
+├── apps/
+│   └── websites/
+│       └── sahayaka.ai/
+│           ├── app/                 # Next.js app directory
+│           │   ├── about/
+│           │   ├── contact/
+│           │   ├── features/
+│           │   ├── solutions/
+│           │   ├── globals.css
+│           │   ├── layout.tsx
+│           │   └── page.tsx
+│           ├── components/          # React components
+│           │   ├── Header.tsx
+│           │   ├── Hero.tsx
+│           │   ├── Features.tsx
+│           │   └── ...
+│           ├── package.json
+│           ├── next.config.js
+│           ├── tailwind.config.js
+│           └── tsconfig.json
+├── package.json                    # Root package.json with workspaces
+├── README.md                       # This file
+└── .gitignore
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create `.env.local` in the website directory:
+```bash
+cd apps/websites/sahayaka.ai
+cp .env.example .env.local
+# Edit .env.local with your values
+```
+
+### TypeScript Configuration
+
+Each workspace has its own `tsconfig.json` that extends the base configuration.
 
 ## 📞 Support
 
@@ -160,13 +225,13 @@ For support and questions:
 - **Phone**: +1 (555) 123-4567
 - **Website**: [sahayaka.ai](https://sahayaka.ai)
 
+## 📄 License
+
+This project is proprietary and confidential. All rights reserved by Sahayaka.
+
 ## 🏥 About Sahayaka
 
-Sahayaka is revolutionizing healthcare through AI-powered workflow automation. Our platform:
-- Reduces administrative time by 75%
-- Improves data accuracy by 95%
-- Processes patients 3x faster
-- Serves 500+ healthcare providers
+Sahayaka is revolutionizing healthcare through AI-powered workflow automation. Our platform reduces administrative burden, improves accuracy, and enables healthcare professionals to focus on what matters most: exceptional patient care.
 
 ---
 

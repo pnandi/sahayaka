@@ -1,6 +1,6 @@
-# Deployment Guide for Sahayaka
+# Deployment Guide for Sahayaka Website
 
-This guide covers various deployment options for the Sahayaka healthcare website.
+This guide covers various deployment options for the Sahayaka healthcare website within the monorepo structure.
 
 ## 🚀 Quick Deployment Options
 
@@ -20,6 +20,7 @@ Vercel is the easiest way to deploy Next.js applications:
    - Sign up/login with GitHub
    - Click "New Project"
    - Import your repository
+   - Set the **Root Directory** to `apps/websites/sahayaka.ai`
    - Deploy automatically
 
 3. **Custom Domain** (Optional)
@@ -234,12 +235,12 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-      
+
       - run: npm ci
       - run: npm run lint
       - run: npm run type-check
       - run: npm run build
-      
+
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:

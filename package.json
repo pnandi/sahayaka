@@ -1,31 +1,44 @@
 {
-  "name": "sahayaka",
-  "version": "0.1.0",
+  "name": "sahayaka-monorepo",
+  "version": "1.0.0",
   "private": true,
+  "description": "Sahayaka - AI-Powered Healthcare Automation Platform",
+  "workspaces": [
+    "apps/websites/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "type-check": "tsc --noEmit",
-    "export": "next build && next export",
-    "clean": "rm -rf .next out node_modules/.cache"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "next": "^13.5.0"
+    "dev": "npm run dev --workspace=apps/websites/sahayaka.ai",
+    "build": "npm run build --workspace=apps/websites/sahayaka.ai",
+    "start": "npm run start --workspace=apps/websites/sahayaka.ai",
+    "lint": "npm run lint --workspace=apps/websites/sahayaka.ai",
+    "lint:fix": "npm run lint:fix --workspace=apps/websites/sahayaka.ai",
+    "type-check": "npm run type-check --workspace=apps/websites/sahayaka.ai",
+    "clean": "npm run clean --workspace=apps/websites/sahayaka.ai",
+    "install:all": "npm install",
+    "dev:website": "npm run dev --workspace=apps/websites/sahayaka.ai",
+    "build:website": "npm run build --workspace=apps/websites/sahayaka.ai"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
     "@types/node": "^20.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
-    "eslint": "^8.0.0",
-    "eslint-config-next": "^13.5.0"
-  }
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/sahayaka.git"
+  },
+  "keywords": [
+    "healthcare",
+    "ai",
+    "automation",
+    "workflow",
+    "patient-profiles",
+    "clinical-efficiency",
+    "monorepo"
+  ],
+  "author": "Sahayaka Team",
+  "license": "PROPRIETARY"
 }
